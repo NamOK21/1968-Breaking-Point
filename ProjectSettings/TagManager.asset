@@ -17,10 +17,10 @@ TagManager:
   - Bullets
   - Enemy Bullets
   - Allies
-  - 
-  - 
-  - 
-  - 
+  - Patrol Allies
+  - Buildings
+  - APCs
+  - Crosshair
   - 
   - 
   - 
@@ -44,14 +44,17 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Foreground
-    uniqueID: 721082425
+  - name: Buildings
+    uniqueID: 1955244973
     locked: 0
-  - name: Player
-    uniqueID: 3900793565
+  - name: Cot Dien
+    uniqueID: 721082425
     locked: 0
   - name: Ground
     uniqueID: 1131579525
+    locked: 0
+  - name: Player
+    uniqueID: 3900793565
     locked: 0
   - name: Bullet
     uniqueID: 3586147149
@@ -61,4 +64,10 @@ TagManager:
     locked: 0
   - name: Spawner
     uniqueID: 3684323243
+    locked: 0
+  - name: Crosshair
+    uniqueID: 125657939
+    locked: 0
+  - name: Vehicles
+    uniqueID: 2311626615
     locked: 0

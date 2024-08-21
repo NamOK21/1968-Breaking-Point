@@ -16,12 +16,13 @@ public class Enemy : MonoBehaviour
     private float timeBtwShots;
     public float startTimeBtwShots;
 
-    // Enemy health and death
+    // Enemy health and death animation
     public int health = 100;
     public GameObject deathEffect;
 
 
 
+    // Enemy movement and animation
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -78,7 +79,8 @@ public class Enemy : MonoBehaviour
     void Die()
     {
         ScoreScript.scoreValue += 1;
-        Instantiate(deathEffect, transform.position, Quaternion.identity);
+        GameObject a = Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
+        Destroy(a, 1f);
     }
 }

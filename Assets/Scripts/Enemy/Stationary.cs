@@ -62,7 +62,8 @@ public class Stationary : MonoBehaviour
     void Die()
     {
         ScoreScript.scoreValue += 1;
-        Instantiate(deathEffect, transform.position, Quaternion.identity);
+        GameObject a = Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
+        Destroy(a, 1f);
     }
 }

@@ -48,8 +48,8 @@ public class Player : MonoBehaviour
     void Die()
         {
         Debug.Log("Player died");
-        Instantiate(Deadge, transform.position, Quaternion.identity);
-        Destroy(gameObject);
+        GameObject a = Instantiate(Deadge, transform.position, Quaternion.identity);
+        Destroy(a, 1f);
         }
     }
 }

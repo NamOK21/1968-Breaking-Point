@@ -40,7 +40,7 @@ public class PointandShoot : MonoBehaviour
     }
     void firebullet(Vector2 direction, float rotationZ)
     {
-        GameObject b = Instantiate(bulletprefab) as GameObject;
+        GameObject b = Instantiate(bulletprefab);
         b.transform.position = gun.transform.position;
         b.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
         b.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;

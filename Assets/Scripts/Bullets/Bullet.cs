@@ -26,5 +26,11 @@ public class Bullet : MonoBehaviour
         }
         Destroy(gameObject);
 
+        Stationary stationary = hitInfo.GetComponent<Stationary>();
+        if (stationary != null)
+        {
+            stationary.TakeDamage(damage);
+        }
+        Destroy(gameObject);
     }
 }

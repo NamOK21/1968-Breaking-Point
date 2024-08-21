@@ -103,13 +103,14 @@ GameObject:
   m_Component:
   - component: {fileID: 553762579551690753}
   - component: {fileID: 7038514207173042960}
-  - component: {fileID: 4946639349749767162}
-  - component: {fileID: 3959826776887417556}
   - component: {fileID: 6037299991772254163}
   - component: {fileID: 1433791485947249552}
   - component: {fileID: 2081275337558920188}
-  - component: {fileID: 5471283282086276294}
   - component: {fileID: 2576517378209475464}
+  - component: {fileID: 4946639349749767162}
+  - component: {fileID: 3959826776887417556}
+  - component: {fileID: 5471283282086276294}
+  - component: {fileID: 5616135182960823643}
   m_Layer: 3
   m_Name: player
   m_TagString: Player
@@ -174,7 +175,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -394173731
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f1394f056ae7ff3438983bd02acb3f5b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -187,48 +188,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4946639349749767162
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6606169353356248987}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcc505c94fa36154b9e7fc08955543ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_JumpForce: 340
-  m_CrouchSpeed: 0.36
-  m_MovementSmoothing: 0.05
-  m_AirControl: 0
-  m_WhatIsGround:
-    serializedVersion: 2
-    m_Bits: 119
-  m_GroundCheck: {fileID: 3126854165368181821}
-  m_CeilingCheck: {fileID: 6961413775964424386}
-  m_CrouchDisableCollider: {fileID: 0}
-  OnLandEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnCrouchEvent:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &3959826776887417556
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6606169353356248987}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a4f82926f00df641b7e998dca80d764, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firePoint: {fileID: 7257497178166601452}
-  bulletPrefab: {fileID: 8486716696589602143, guid: 0bc65fe9fbd6fbe439fa7e0172a03e3b, type: 3}
 --- !u!50 &6037299991772254163
 Rigidbody2D:
   serializedVersion: 4
@@ -336,23 +295,6 @@ CircleCollider2D:
   m_Offset: {x: -0.3564693, y: -0.3129966}
   serializedVersion: 2
   m_Radius: 0.44782913
---- !u!114 &5471283282086276294
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6606169353356248987}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: baccbf9a7bee014458c583b2a27c4e22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  controller: {fileID: 4946639349749767162}
-  animator: {fileID: 2576517378209475464}
-  Deadge: {fileID: 6677002457785156334, guid: 19e5959aaf7feb046b3606f2d51b2d69, type: 3}
-  runSpeed: 15
 --- !u!95 &2576517378209475464
 Animator:
   serializedVersion: 5
@@ -374,3 +316,75 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4946639349749767162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6606169353356248987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcc505c94fa36154b9e7fc08955543ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_JumpForce: 340
+  m_CrouchSpeed: 0.36
+  m_MovementSmoothing: 0.05
+  m_AirControl: 0
+  m_WhatIsGround:
+    serializedVersion: 2
+    m_Bits: 119
+  m_GroundCheck: {fileID: 3126854165368181821}
+  m_CeilingCheck: {fileID: 6961413775964424386}
+  m_CrouchDisableCollider: {fileID: 0}
+  OnLandEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCrouchEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &3959826776887417556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6606169353356248987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a4f82926f00df641b7e998dca80d764, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firePoint: {fileID: 7257497178166601452}
+  bulletPrefab: {fileID: 8486716696589602143, guid: 0bc65fe9fbd6fbe439fa7e0172a03e3b, type: 3}
+--- !u!114 &5471283282086276294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6606169353356248987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baccbf9a7bee014458c583b2a27c4e22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 4946639349749767162}
+  animator: {fileID: 2576517378209475464}
+  runSpeed: 15
+--- !u!114 &5616135182960823643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6606169353356248987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b375c5da41332e84897256ec2eb9ec53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  currentHealth: 0
+  deathEffect: {fileID: 0}

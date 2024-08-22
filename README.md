@@ -10,6 +10,7 @@ What achieved so far:
 - Enemy AI, comes in 3 types: Follow, Stationary and Patrol
 - A vehicle prototype that is functionable
 - Basic UI system
+=====================================
 Plan until Bachelor Thesis Defense:
 ======================================
 - Make a proper GUI system with full settings functions

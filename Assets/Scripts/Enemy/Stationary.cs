@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Stationary : MonoBehaviour
@@ -31,9 +29,6 @@ public class Stationary : MonoBehaviour
             transform.position = this.transform.position;
             EnemyFire();
         }
-
-
-        
     }
 
     public void EnemyFire()
@@ -51,7 +46,7 @@ public class Stationary : MonoBehaviour
     }
 
     public void TakeDamage (int damage) 
-    {         
+    {
         health -= damage;
         if (health <= 0)
         {

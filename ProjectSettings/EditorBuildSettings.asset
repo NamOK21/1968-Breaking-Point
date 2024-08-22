@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: 291dfe05ab6a3254ba19eaa6498d74dd
+  - enabled: 1
     path: Assets/Scenes/Hue - Tet Offensive.unity
     guid: e5174af539ed97140a81af6fb2c604c8
   - enabled: 1

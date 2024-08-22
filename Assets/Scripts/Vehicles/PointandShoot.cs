@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Build.Content;
 using UnityEngine;
 
 public class PointandShoot : MonoBehaviour
@@ -45,5 +42,22 @@ public class PointandShoot : MonoBehaviour
         b.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
         b.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
         Destroy(b, 2.0f);
+    }
+
+    private void OnTriggerEnter2D(Collider2D hitInfo)
+    {
+        Enemy enemy = hitInfo.GetComponent<Enemy>();
+        if (enemy != null)
+        {
+            enemy.TakeDamage(damage);
+        }
+        Destroy(gameObject);
+
+        Stationary stationary = hitInfo.GetComponent<Stationary>();
+        if (stationary != null)
+        {
+            stationary.TakeDamage(damage);
+        }
+        Destroy(gameObject);
     }
 }

@@ -76,7 +76,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 721082425
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ae679965c6a771949ab626cbfb9b7ffe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -230,9 +230,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 4534335598054989191}
-  speed: 2.5
-  stoppingDistance: 4.5
-  retreatDistance: 3.5
+  speed: 2
+  stoppingDistance: 4
+  retreatDistance: 3
   enemybullet: {fileID: 380950326773940713, guid: 163b28e7e82382042b43ebd2384823db, type: 3}
   startTimeBtwShots: 1
   health: 100

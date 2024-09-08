@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     public float retreatDistance;
 
     // Enemy shooting
+    public Transform firePoint;
     public GameObject enemybullet;
     private Transform player;
     private float timeBtwShots;
@@ -56,7 +57,7 @@ public class Enemy : MonoBehaviour
         if (timeBtwShots <= 0)
         {
             // Put the code to shoot here
-            Instantiate(enemybullet, transform.position, Quaternion.identity);
+            Instantiate(enemybullet, firePoint.position, Quaternion.identity);
             timeBtwShots = startTimeBtwShots;
         }
         else

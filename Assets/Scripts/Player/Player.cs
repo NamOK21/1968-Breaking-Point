@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     public int health = 100;
+    public int currentHealth;
+    public HealthBar healthBar;
 
     public CharacterController2D controller;
     public Animator animator;
@@ -11,7 +13,15 @@ public class Player : MonoBehaviour
 
     public float runSpeed = 40f;
     float horizontalMove = 0f;
+
     bool jump = false;
+    bool crouch = false;
+
+    void Start()
+    {
+        currentHealth = health;
+        healthBar.SetMaxHealth(health);
+    }
 
     // Movement control and animation
     void Update()
@@ -24,20 +34,35 @@ public class Player : MonoBehaviour
         {
             jump = true;
         }
+
+        if (Input.GetButtonDown("Crouch"))
+        {
+            crouch = true;
+        }
+        else if (Input.GetButtonUp("Crouch"))
+        {
+            crouch = false;
+        }
+    }
+
+    public void OnCrouching(bool isCrouching)
+    {
+        animator.SetBool("isCrouching", isCrouching);
     }
 
     private void FixedUpdate()
     {
         // Move our character
-        controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
+        controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
         jump = false;
     }
 
 
     public void TakeDamage(int damage)
     {
-        health -= damage;
-        if (health <= 0)
+        currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
+        if (currentHealth <= 0)
         {
             Die();
         }

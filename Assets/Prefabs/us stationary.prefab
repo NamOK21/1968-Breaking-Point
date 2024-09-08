@@ -30,11 +30,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2960674540450739329}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.903, y: -1.6, z: -0.037629515}
-  m_LocalScale: {x: 0.3548, y: 0.3548, z: 0.3548}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 17.205, y: -1.56, z: -0.037629515}
+  m_LocalScale: {x: 0.4143354, y: 0.515309, z: 0.4143354}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4209997295493840650}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &408830814729217725
@@ -230,7 +231,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stoppingDistance: 5
+  firePoint: {fileID: 4209997295493840650}
   enemybullet: {fileID: 380950326773940713, guid: 163b28e7e82382042b43ebd2384823db, type: 3}
   startTimeBtwShots: 2
   health: 100
   deathEffect: {fileID: 2265138391147913073, guid: 788109ccccebd614e9cd48ec79491994, type: 3}
+--- !u!1 &5398661681064983152
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4209997295493840650}
+  m_Layer: 7
+  m_Name: 'firepoint '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4209997295493840650
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5398661681064983152}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: -0.9807, y: 0.1593, z: 0}
+  m_LocalScale: {x: 1.1212318, y: 0.90925354, z: 0.98004806}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 252237904352248671}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}

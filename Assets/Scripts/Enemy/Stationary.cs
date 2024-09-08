@@ -6,6 +6,7 @@ public class Stationary : MonoBehaviour
     public float stoppingDistance;
 
     // Enemy shooting
+    public Transform firePoint;
     public GameObject enemybullet;
     private Transform player;
     private float timeBtwShots;
@@ -36,7 +37,7 @@ public class Stationary : MonoBehaviour
         if (timeBtwShots <= 0)
         {
             // Put the code to shoot here
-            Instantiate(enemybullet, transform.position, Quaternion.identity);
+            Instantiate(enemybullet, firePoint.position, Quaternion.identity);
             timeBtwShots = startTimeBtwShots;
         }
         else

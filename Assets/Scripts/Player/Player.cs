@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,12 +11,14 @@ public class Player : MonoBehaviour
     public CharacterController2D controller;
     public Animator animator;
     public GameObject Deadge;
+    public GameManager gameManager;
 
     public float runSpeed = 40f;
     float horizontalMove = 0f;
 
     bool jump = false;
     bool crouch = false;
+    private bool isDead = false;
 
     void Start()
     {
@@ -62,10 +65,14 @@ public class Player : MonoBehaviour
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
-        if (currentHealth <= 0)
+        if (currentHealth <= 0 && !isDead)
         {
+            isDead = true;
             Die();
+            gameManager.GameOver();
         }
+
+
 
     void Die()
         {

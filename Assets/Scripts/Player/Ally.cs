@@ -1,45 +1,48 @@
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
-public class Stationary : MonoBehaviour
+public class Ally : MonoBehaviour
 {
     // Enemy movement and animation
+    public Animator animator;
+    public float speed;
     public float stoppingDistance;
 
     // Enemy shooting
     public Transform firePoint;
-    public GameObject enemybullet;
-    private Transform player;
-    private Transform ally;
+    public GameObject allybullet;
+    private Transform enemy;
     private float timeBtwShots;
     public float startTimeBtwShots;
 
-    // Enemy health and death
+    // Enemy health and death animation
     public int health = 100;
     public GameObject deathEffect;
 
 
+
+    // Enemy movement and animation
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-        ally = GameObject.FindGameObjectWithTag("Allies").transform;
-        
+        enemy = GameObject.FindGameObjectWithTag("Attack Enemy").transform;
         timeBtwShots = startTimeBtwShots;
     }
 
     void Update()
     {
-        if (Vector2.Distance(transform.position, player.position) < stoppingDistance)
+        if (Vector2.Distance(transform.position, enemy.position) > stoppingDistance)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, enemy.position, speed * Time.deltaTime);
+            animator.SetFloat("Speed", Mathf.Abs(speed));
+        }
+        else if (Vector2.Distance(transform.position, enemy.position) < stoppingDistance)
         {
             transform.position = this.transform.position;
+            animator.SetFloat("Speed", 0);
             EnemyFire();
+
         }
 
-        if (Vector2.Distance(transform.position, ally.position) < stoppingDistance)
-        {
-            transform.position = this.transform.position;
-            EnemyFire();
-        }
+        
     }
 
     public void EnemyFire()
@@ -47,18 +50,17 @@ public class Stationary : MonoBehaviour
         if (timeBtwShots <= 0)
         {
             // Put the code to shoot here
-            Instantiate(enemybullet, firePoint.position, Quaternion.identity);
+            Instantiate(allybullet, firePoint.position, Quaternion.identity);
             timeBtwShots = startTimeBtwShots;
         }
         else
         {
             timeBtwShots -= Time.deltaTime;
         }
-
     }
 
     public void TakeDamage (int damage) 
-    {
+    {         
         health -= damage;
         if (health <= 0)
         {

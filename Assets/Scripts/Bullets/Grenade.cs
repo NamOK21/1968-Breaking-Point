@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Grenade : MonoBehaviour
 {
+    public int  grenadeCount = 3;
+    public int currentGrenadeCount;
     public float delay = 3f;
     public float radius = 5f;
     public int damage = 50;
@@ -16,6 +19,8 @@ public class Grenade : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        currentGrenadeCount = grenadeCount;
+
         countdown = delay;
     }
 

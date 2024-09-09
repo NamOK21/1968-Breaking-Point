@@ -175,7 +175,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -394173731
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f1394f056ae7ff3438983bd02acb3f5b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -292,9 +292,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.35646924, y: -0.44993734}
+  m_Offset: {x: -0.35646924, y: -0.3694922}
   serializedVersion: 2
-  m_Radius: 0.31088832
+  m_Radius: 0.23044318
 --- !u!95 &2576517378209475464
 Animator:
   serializedVersion: 5
@@ -328,7 +328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcc505c94fa36154b9e7fc08955543ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 250
+  m_JumpForce: 280
   m_CrouchSpeed: 0.4
   m_MovementSmoothing: 0.05
   m_AirControl: 1
@@ -388,6 +388,7 @@ MonoBehaviour:
   controller: {fileID: 4946639349749767162}
   animator: {fileID: 2576517378209475464}
   Deadge: {fileID: 6677002457785156334, guid: 19e5959aaf7feb046b3606f2d51b2d69, type: 3}
+  gameManager: {fileID: 0}
   runSpeed: 10
 --- !u!114 &1917457703349777912
 MonoBehaviour:

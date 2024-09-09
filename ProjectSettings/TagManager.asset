@@ -21,8 +21,8 @@ TagManager:
   - Buildings
   - APCs
   - Crosshair
-  - 
-  - 
+  - Cl-Buildings
+  - Environment
   - 
   - 
   - 
@@ -46,6 +46,9 @@ TagManager:
     locked: 0
   - name: Buildings
     uniqueID: 1955244973
+    locked: 0
+  - name: Climbable Building
+    uniqueID: 3671000439
     locked: 0
   - name: Cot Dien
     uniqueID: 721082425

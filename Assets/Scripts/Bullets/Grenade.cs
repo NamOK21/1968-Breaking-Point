@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class Grenade : MonoBehaviour
 {
@@ -13,9 +9,17 @@ public class Grenade : MonoBehaviour
     public int damage = 50;
 
     public GameObject explosionEffect;
+    AudioManager audioManager;
 
     float countdown;
     bool hasExploded = false;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectsWithTag("Audio")[0].GetComponent<AudioManager>();
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +42,7 @@ public class Grenade : MonoBehaviour
     void Explode()
     {
         GameObject a = Instantiate(explosionEffect, transform.position, transform.rotation);
+        audioManager.PlaySFX(audioManager.grenade);
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, radius);
         foreach (Collider2D nearbyObject in colliders)
         {

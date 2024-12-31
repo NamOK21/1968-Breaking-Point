@@ -1,11 +1,15 @@
 using UnityEngine;
 
-public class weapons : MonoBehaviour
+public class PlayerWeapons : MonoBehaviour
 {
     public Transform firePoint;
     public GameObject bulletPrefab;
+    AudioManager audioManager;
 
-
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectsWithTag("Audio")[0].GetComponent<AudioManager>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -15,6 +19,8 @@ public class weapons : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             Shoot();
+            audioManager.PlaySFX(audioManager.gunfire);
+
         }
     }
 

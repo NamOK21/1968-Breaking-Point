@@ -11,7 +11,8 @@ public class AudioManager : MonoBehaviour
     [Header("------------ Audio Clips ------------")]
     public AudioClip background;
     public AudioClip gunfire;
-    public AudioClip dies;
+    public AudioClip enemygunfire;
+    public AudioClip grenade;
     public AudioClip fire;
 
     private void Start()
@@ -19,5 +20,10 @@ public class AudioManager : MonoBehaviour
         musicSource.clip = background;
         musicSource.loop = true;
         musicSource.Play();
+    }
+
+    public void PlaySFX(AudioClip clip)
+    {
+        sfxSource.PlayOneShot(clip);
     }
 }

@@ -18,7 +18,12 @@ public class Enemy : MonoBehaviour
     // Enemy health and death animation
     public int health = 100;
     public GameObject deathEffect;
+    AudioManager audioManager;
 
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectsWithTag("Audio")[0].GetComponent<AudioManager>();
+    }
 
 
     // Enemy movement and animation
@@ -40,7 +45,6 @@ public class Enemy : MonoBehaviour
             transform.position = this.transform.position;
             animator.SetFloat("Speed", 0);
             EnemyFire();
-
         }
         else if (Vector2.Distance(transform.position, player.position) < retreatDistance)
         {
@@ -58,6 +62,7 @@ public class Enemy : MonoBehaviour
         {
             // Put the code to shoot here
             Instantiate(enemybullet, firePoint.position, Quaternion.identity);
+            audioManager.PlaySFX(audioManager.enemygunfire);
             timeBtwShots = startTimeBtwShots;
         }
         else

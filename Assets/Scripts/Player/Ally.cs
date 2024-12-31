@@ -23,7 +23,7 @@ public class Ally : MonoBehaviour
     // Enemy movement and animation
     void Start()
     {
-        enemy = GameObject.FindGameObjectWithTag("Attack Enemy").transform;
+        enemy = GameObject.FindGameObjectWithTag("Enemies").transform;
         timeBtwShots = startTimeBtwShots;
     }
 
@@ -70,7 +70,6 @@ public class Ally : MonoBehaviour
 
     void Die()
     {
-        ScoreScript.scoreValue += 1;
         GameObject a = Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
         Destroy(a, 1f);

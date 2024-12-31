@@ -56,8 +56,7 @@ AudioMixerGroupController:
   m_Name: Music
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 73597046833bfe74eb2032e4bd6ef2c6
-  m_Children:
-  - {fileID: -4763365593079459803}
+  m_Children: []
   m_Volume: 2760cfb54357b8a45966df8fe74d4ac0
   m_Pitch: 38453e6cd154f0d4a921cdd89d9265a0
   m_Send: 00000000000000000000000000000000
@@ -85,6 +84,8 @@ AudioMixerController:
   m_ExposedParameters:
   - guid: 2760cfb54357b8a45966df8fe74d4ac0
     name: BGM
+  - guid: 7caa84b801218a3449afee4d496e0a88
+    name: SFX
   m_AudioMixerGroupViews:
   - guids:
     - 8cfae19a058949046adfaf2e90d2a68e
@@ -103,6 +104,7 @@ AudioMixerGroupController:
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 8cfae19a058949046adfaf2e90d2a68e
   m_Children:
+  - {fileID: -4763365593079459803}
   - {fileID: -505734141156441997}
   m_Volume: fb52dd15ce8290340ae3393934fcb17e
   m_Pitch: becb22a9abdce5742aa13e2897e43c3a
@@ -138,6 +140,7 @@ AudioMixerSnapshotController:
   m_SnapshotID: 98c209f38c114c145af6bdca03b42d77
   m_FloatValues:
     fb52dd15ce8290340ae3393934fcb17e: 0.44032478
-    2760cfb54357b8a45966df8fe74d4ac0: -7
+    2760cfb54357b8a45966df8fe74d4ac0: -0.00003417954
+    585557e88eaca76488f24496afe38b35: 1
     38453e6cd154f0d4a921cdd89d9265a0: 1
   m_TransitionOverrides: {}

@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Ladder
+  - Audio
+  - Allies
+  - Enemies
   layers:
   - Default
   - TransparentFX
@@ -23,9 +27,9 @@ TagManager:
   - Crosshair
   - Cl-Buildings
   - Environment
-  - 
-  - 
-  - 
+  - Grenades
+  - Ladder
+  - Covers
   - 
   - 
   - 
@@ -53,6 +57,9 @@ TagManager:
   - name: Cot Dien
     uniqueID: 721082425
     locked: 0
+  - name: Cover
+    uniqueID: 3050243349
+    locked: 0
   - name: Ground
     uniqueID: 1131579525
     locked: 0
@@ -79,4 +86,7 @@ TagManager:
     locked: 0
   - name: Vehicles
     uniqueID: 2311626615
+    locked: 0
+  - name: Ladder
+    uniqueID: 4184261761
     locked: 0

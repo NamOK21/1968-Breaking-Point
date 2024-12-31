@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1106765861489745501}
   - component: {fileID: 8629256341278008868}
   - component: {fileID: 113852487864468530}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: grenade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,7 +147,7 @@ CapsuleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 74752
+    m_Bits: 74880
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2

@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
+    Player player;
     [SerializeField] GameObject pauseMenu;
     public void Pause()
     {
@@ -22,14 +23,17 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
     }
 
-    public void Options()
-    {
-        
-    }
-
     public void MainMenu()
     {
         SceneManager.LoadScene("Main Menu");
         Time.timeScale = 1f;
+    }
+
+    public void OpenPauseMenu()
+    {
+        if (Input.GetButtonDown("escape"))
+        {   
+            pauseMenu.SetActive(true);
+        }
     }
 }

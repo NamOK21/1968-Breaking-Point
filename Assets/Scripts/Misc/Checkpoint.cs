@@ -1,9 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Checkpoint : MonoBehaviour
 {
+    Player player;
     public BoxCollider2D trigger;
     public HealthBar healthBar;
 
@@ -13,6 +12,7 @@ public class Checkpoint : MonoBehaviour
         if (player != null)
             player.currentHealth = player.health;
             healthBar.SetHealth(player.currentHealth);
+            player.checkpointPos = transform.position;
             trigger.enabled = false;
     }
 }

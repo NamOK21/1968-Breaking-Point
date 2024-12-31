@@ -9,8 +9,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: 291dfe05ab6a3254ba19eaa6498d74dd
   - enabled: 1
+    path: Assets/Scenes/Loading screen.unity
+    guid: e9de442352f4a2846992c2e1a2e2d351
+  - enabled: 1
     path: Assets/Scenes/Hue - Tet Offensive.unity
     guid: e5174af539ed97140a81af6fb2c604c8
+  - enabled: 1
+    path: Assets/Scenes/Loading screen 1.unity
+    guid: 4cbc6b7a2f84e4d408b972ffb39ce126
   - enabled: 1
     path: Assets/Scenes/Streets of Hue.unity
     guid: e0654fa02fd15be4bad660d72b5fa364

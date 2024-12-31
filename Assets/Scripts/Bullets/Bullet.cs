@@ -1,4 +1,3 @@
-using System.Reflection.Emit;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -12,7 +11,7 @@ public class Bullet : MonoBehaviour
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
         rb.velocity = transform.right * speed;
-        Destroy(this.gameObject, 2f);
+        Destroy(this.gameObject, 1f);
     }
 
 

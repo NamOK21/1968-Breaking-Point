@@ -1,4 +1,3 @@
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Stationary : MonoBehaviour
@@ -10,21 +9,23 @@ public class Stationary : MonoBehaviour
     public Transform firePoint;
     public GameObject enemybullet;
     private Transform player;
-    private Transform ally;
+    private Transform allies;
+
     private float timeBtwShots;
     public float startTimeBtwShots;
 
     // Enemy health and death
     public int health = 100;
     public GameObject deathEffect;
+    AudioManager audioManager;
 
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        ally = GameObject.FindGameObjectWithTag("Allies").transform;
-        
         timeBtwShots = startTimeBtwShots;
+
+        allies = GameObject.FindGameObjectWithTag("Alles").transform;
     }
 
     void Update()
@@ -35,11 +36,13 @@ public class Stationary : MonoBehaviour
             EnemyFire();
         }
 
-        if (Vector2.Distance(transform.position, ally.position) < stoppingDistance)
+        
+        if (Vector2.Distance(transform.position, allies.position) < stoppingDistance)
         {
             transform.position = this.transform.position;
             EnemyFire();
         }
+
     }
 
     public void EnemyFire()

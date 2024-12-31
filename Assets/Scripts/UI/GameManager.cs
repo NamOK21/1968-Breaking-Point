@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    PlayerWeapons wp;
     public GameObject gameoverUI;
     public PauseMenu pause;
 
@@ -12,5 +13,6 @@ public class GameManager : MonoBehaviour
     {
         gameoverUI.SetActive(true);
         Time.timeScale = 0f;
+        wp.enabled = false;
     }
 }

@@ -1,12 +1,18 @@
-using JetBrains.Annotations;
+using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
+    // Respawn values
+    public Vector2 checkpointPos;
+    Rigidbody2D playerrb;
+
     public int health = 100;
     public int currentHealth;
     public HealthBar healthBar;
+
+    public int live;
+    public int currentLive;
 
     public CharacterController2D controller;
     public Animator animator;
@@ -24,6 +30,11 @@ public class Player : MonoBehaviour
     {
         currentHealth = health;
         healthBar.SetMaxHealth(health);
+
+        currentLive = live;
+
+        playerrb = GetComponent<Rigidbody2D>();
+        checkpointPos = transform.position;
     }
 
     // Movement control and animation
@@ -69,38 +80,53 @@ public class Player : MonoBehaviour
         {
             isDead = true;
             Die();
-            gameManager.GameOver();
+            TakeLive();
+            if (currentLive == 0)
+            {
+                gameManager.GameOver();
+            }
+            else
+            {
+                StartCoroutine(Respawn(2f));
+            }
         }
-
-
+    }
+    public void TakeLive()
+    {
+        currentLive -= 1;
+        LiveCounter.liveValue = currentLive;
+    }
 
     void Die()
         {
         Debug.Log("Player died");
         GameObject a = Instantiate(Deadge, transform.position, Quaternion.identity);
         Destroy(a, 1f);
+        if (currentLive == 0)
+        {
+            Destroy(gameObject);
         }
     }
 
-    public void SavePlayer()
+    public void SetCheckpoint(Vector2 pos)
     {
-        SaveSystem.SavePlayer(this);
+        checkpointPos = pos;
     }
 
-    public void LoadPlayer()
+
+    IEnumerator Respawn(float duration)
     {
-        PlayerData data = SaveSystem.LoadPlayer();
-
-        health = data.health;
-
-        Vector3 position;
-        position.x = data.position[0];
-        position.y = data.position[1];
-        position.z = data.position[2];
-
-        transform.position = position;
-
-        Debug.Log("Player loaded");
+        playerrb.velocity = new Vector2(0, 0);
+        playerrb.simulated = false;
+        transform.localScale = new Vector3(0, 0, 0);
+        yield return new WaitForSeconds(duration);
+        transform.position = checkpointPos;
+        transform.localScale = new Vector3(0.5024842f, 0.5463118f, 0.4579695f);
+        playerrb.simulated = true;
+        currentHealth = health;
+        healthBar.SetHealth(currentHealth);
+        isDead = false;
+        }
     }
 
-}
+
